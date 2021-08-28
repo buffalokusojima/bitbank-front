@@ -1,0 +1,32 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+        nodejs: 10
+    commands:
+      #- npm install -g n
+      - n stable
+      #- npm install
+
+  pre_build:
+    commands:
+      - npm install --quiet --global expo-cli
+      - echo -e "APP_REGION=$APP_REGION\n
+                 APP_COGNITO_USER_POOL_ID=$APP_COGNITO_USER_POOL_ID\n
+                 APP_COGNITO_USER_POOL_WEB_CLIENT_ID=$APP_COGNITO_USER_POOL_WEB_CLIENT_ID\n
+                 APP_APIGATEWAY_ENDPOINT=$APP_APIGATEWAY_ENDPOINT" >> .env
+
+  build:
+    commands:
+      - echo Build started on `date`
+      - expo build:web
+      
+  post_build:
+    commands:
+      - aws cloudfront create-invalidation --distribution-id $DISTRIBUTION --paths "/*"
+  
+artifacts:
+  files:
+    - '**/*'
+  base-directory: web-build

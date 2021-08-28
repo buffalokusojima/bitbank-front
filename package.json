@@ -1,0 +1,39 @@
+{
+  "main": "node_modules/expo/AppEntry.js",
+  "scripts": {
+    "start": "expo start",
+    "android": "expo start --android",
+    "ios": "expo start --ios",
+    "web": "expo start --web",
+    "eject": "expo eject"
+  },
+  "dependencies": {
+    "@aws-amplify/ui-components": "^1.7.1",
+    "@aws-amplify/ui-react": "^1.2.8",
+    "@react-native-picker/picker": "1.16.1",
+    "@react-navigation/bottom-tabs": "^6.0.2",
+    "@react-navigation/native": "^6.0.2",
+    "aws-amplify": "^4.2.2",
+    "expo": "~42.0.1",
+    "expo-status-bar": "~1.0.4",
+    "react": "16.13.1",
+    "react-dom": "16.13.1",
+    "react-native": "https://github.com/expo/react-native/archive/sdk-42.0.0.tar.gz",
+    "react-native-dotenv": "^3.1.1",
+    "react-native-elements": "^3.4.2",
+    "react-native-picker": "^4.3.7",
+    "react-native-select-dropdown": "^1.0.9",
+    "react-native-tab-view": "^3.1.1",
+    "react-native-vector-icons": "^8.1.0",
+    "react-native-web": "~0.13.12",
+    "react-navigation": "^4.4.4",
+    "react-redux": "^7.2.4"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.9.0",
+    "@types/react": "~16.9.35",
+    "@types/react-native": "~0.63.2",
+    "typescript": "~4.0.0"
+  },
+  "private": true
+}
